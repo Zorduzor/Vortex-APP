@@ -1,0 +1,71 @@
+﻿<Page x:Class="ARDesignAPP.vehicles"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ARDesignAPP"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="vehicles">
+
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="1080" VerticalAlignment="Top" Width="1920" Source="/Dashboard véhicules.png"/>
+        <ListView x:Name="ListviewClients" Margin="202,200,1562,784" FontFamily="Bahnschrift"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" MinWidth="156" MinHeight="58">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding NomComplet}" Margin="5"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- TextBoxes sans événements TextChanged -->
+        <TextBox x:Name="marqueBox" HorizontalAlignment="Left" Margin="604,388,0,0" TextWrapping="Wrap" Text="Marque" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="modeleBox" HorizontalAlignment="Left" Margin="604,432,0,0" TextWrapping="Wrap" Text="Modèle" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="motorisationBox" HorizontalAlignment="Left" Margin="1039,642,0,0" TextWrapping="Wrap" Text="Motorisation" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="cylindreeBox" HorizontalAlignment="Left" Margin="1039,757,0,0" TextWrapping="Wrap" Text="Cylindrée" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="puissance_kwBox" HorizontalAlignment="Left" Margin="1039,733,0,0" TextWrapping="Wrap" Text="KW" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="kilometrageBox" HorizontalAlignment="Left" Margin="604,475,0,0" TextWrapping="Wrap" Text="Km" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="numero_homologationBox" HorizontalAlignment="Left" Margin="604,592,0,0" TextWrapping="Wrap" Text="Numéro " VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="numeroVINBox" HorizontalAlignment="Left" Margin="543,510,0,0" TextWrapping="Wrap" Text="No série" VerticalAlignment="Top" Width="188" FontFamily="Bahnschrift" FontSize="14"/>
+        <ListView x:Name="ListviewClientsVehicles" Margin="397,206,1360,772" FontFamily="Bahnschrift"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" MinWidth="163" MinHeight="60">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Marque}" Margin="5"/>
+                        <TextBlock Text="{Binding Modele}" Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="majVehicleButton" Content="Button" HorizontalAlignment="Left" Margin="434,847,0,0" VerticalAlignment="Top" Width="264" Height="43" Click="majVehicleButton_Click" Opacity="0"/>
+        <Button x:Name="NewClientsButton" Content="Button" HorizontalAlignment="Left" Margin="543,956,0,0" VerticalAlignment="Top" Width="243" Height="40" Opacity="0"/>
+        <TextBox x:Name="misencirculBox" HorizontalAlignment="Left" Margin="604,550,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="expertiseBox" HorizontalAlignment="Left" Margin="604,632,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="entretienBox" HorizontalAlignment="Left" Margin="1039,709,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14" UseLayoutRounding="True"/>
+        <TextBox x:Name="piecesinstallBox" HorizontalAlignment="Left" Margin="816,801,0,0" TextWrapping="Wrap" Text="pièces installées" VerticalAlignment="Top" Width="320" Height="104" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="cvoriginalBox" HorizontalAlignment="Left" Margin="1602,792,0,0" TextWrapping="Wrap" Text="CV origine" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="coupleoriginalBox" HorizontalAlignment="Left" Margin="1602,828,0,0" TextWrapping="Wrap" Text="Couple origine" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <Button x:Name="orifileButton" Content="Charger" HorizontalAlignment="Left" Margin="1530,857,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="14" Click="OrifileButton_Click"/>
+        <Button x:Name="tunefileButton" Content="Charger" HorizontalAlignment="Left" Margin="1530,964,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="14" Click="tunefileButton_Click"/>
+        <TextBox x:Name="orifileBox" HorizontalAlignment="Left" Margin="1602,857,0,0" TextWrapping="Wrap" Text="Chemin" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="tunefileBox" HorizontalAlignment="Left" Margin="1602,964,0,0" TextWrapping="Wrap" Text="Chemin" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="cvtuneBox" HorizontalAlignment="Left" Margin="1602,896,0,0" TextWrapping="Wrap" Text="CV modifié" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="coupletuneBox" HorizontalAlignment="Left" Margin="1602,926,0,0" TextWrapping="Wrap" Text="ouple modifié" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="stageBox" HorizontalAlignment="Left" Margin="1437,985,0,0" TextWrapping="Wrap" Text="Type de stage" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift"/>
+        <TextBox x:Name="boiteavitesseBox" HorizontalAlignment="Left" Margin="1039,666,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="carburantBox" HorizontalAlignment="Left" Margin="1039,685,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="ecuBox" HorizontalAlignment="Left" Margin="1602,315,0,0" TextWrapping="Wrap" Text="Modèle" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="outilBox" HorizontalAlignment="Left" Margin="1602,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="softwareBox" HorizontalAlignment="Left" Margin="1602,345,0,0" TextWrapping="Wrap" Text="Numéro SW" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="hardwareBox" HorizontalAlignment="Left" Margin="1602,379,0,0" TextWrapping="Wrap" Text="Numéro HW" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <TextBox x:Name="brandsoftwareBox" HorizontalAlignment="Left" Margin="1602,413,0,0" TextWrapping="Wrap" Text="Numéro brand" VerticalAlignment="Top" Width="120" FontFamily="Bahnschrift" FontSize="14"/>
+        <Button x:Name="ClientsButton" Content="Button" HorizontalAlignment="Left" Margin="24,438,0,0" VerticalAlignment="Top" Height="94" Width="110" Opacity="0" Click="ClientsButton_Click"/>
+        <Button x:Name="deleteButton" Content="Button" HorizontalAlignment="Left" Margin="434,718,0,0" VerticalAlignment="Top" Height="48" Width="274" Opacity="0" Click="deleteButton_Click"/>
+        <Button x:Name="newVehicleButton" Content="Button" HorizontalAlignment="Left" Margin="434,782,0,0" VerticalAlignment="Top" Height="48" Width="274" Opacity="0" Click="newVehicleButton_Click"/>
+        <Button x:Name="dashboardButton" Content="Button" HorizontalAlignment="Left" Margin="34,326,0,0" VerticalAlignment="Top" Height="48" Width="89" Opacity="0" Click="dashboardButton_Click"/>
+
+    </Grid>
+</Page>
+

@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="403.jpg" />
+    <None Remove="Dashboard base.png" />
+    <None Remove="Dashboard clients.png" />
+    <None Remove="Dashboard véhicules.png" />
+    <None Remove="dashboardVehicle.png" />
+    <None Remove="dashboard_vehicules.jpg" />
+    <None Remove="login.png" />
+    <None Remove="login_ard.jpg" />
+    <None Remove="mockuplogo.png" />
+    <None Remove="template_dashboard_vehicles.png" />
+    <None Remove="template_dashboard_vide.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="403.jpg" />
+    <Resource Include="Dashboard base.png" />
+    <Resource Include="Dashboard clients.png" />
+    <Resource Include="Dashboard véhicules.png" />
+    <Resource Include="dashboardVehicle.png" />
+    <Resource Include="dashboard_vehicules.jpg" />
+    <Resource Include="login.png" />
+    <Resource Include="login_ard.jpg" />
+    <Resource Include="mockuplogo.png" />
+    <Resource Include="template_dashboard_vehicles.png" />
+    <Resource Include="template_dashboard_vide.png" />
+  </ItemGroup>
+
+</Project>
